@@ -1,0 +1,15 @@
+.new-contact {
+	width: 400px;
+	margin: 0 auto;
+}
+.input-control {
+	margin-bottom: 10px;
+}
+.input-control label {
+	display: block;
+}
+.input-control input {
+	padding: 10px;
+	border-radius: 5px;
+	width: 70%;
+}
