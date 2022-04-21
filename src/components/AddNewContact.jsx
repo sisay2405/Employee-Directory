@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles/AddNewContact.css';
+import '../styles/AddNewContact.css';
 
 export default function AddNewContact({ onNewContact }) {
 	const [firstName, setFirstName] = useState('');
