@@ -1,3 +1,6 @@
+import React from "react"
+
+
 const ContactCards = ({ contactList }) => {
     return (
       <>

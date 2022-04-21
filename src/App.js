@@ -1,7 +1,10 @@
 import useFetch from 'react-fetch-hook';
-import ContactCards from './ContactCards';
+import ContactCards from './Components/ContactCards';
 import { useEffect, useState } from 'react';
-import AddNewContact from './AddNewContact';
+import AddNewContact from './Components/AddNewContact';
+import './styles/AddNewContact.css'
+import './styles/App.css'
+import './styles/index.css'
 
 const App = () => {
 	const url = 'https://randomuser.me/api/';
