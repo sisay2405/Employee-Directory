@@ -1,91 +1,79 @@
-import React, { useState } from 'react';
-import '../styles/AddNewContact.css';
+import React, { useState } from "react";
+import "../styles/AddNewContact.css";
 
-export default function AddNewContact({ onNewContact }) {
-	const [firstName, setFirstName] = useState('');
-	const [lastName, setLastName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
-	const [number, setNumber] = useState('');
-	const [city, setCity] = useState('');
+const AddNewContact =({ onNewContact }) => {
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [phoneNumber, setphoneNumber] = useState("");
+	const [city, setCity] = useState("");
+	const [file, setFile] = useState();
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-
-		const newContact = {
-			firstName,
-			lastName,
-			email,
-			phone,
-			number,
-			city,
-		};
-
+		const newContact = { firstName, lastName, email, phoneNumber, city };
 		onNewContact(newContact);
 	};
-
+	function handleChange(e) {
+		console.log(e.target.files);
+		setFile(URL.createObjectURL(e.target.files[0]));
+	}
 	return (
-		<div className='new-contact'>
-			<form onSubmit={submitHandler}>
-				<div className='input-control'>
-					<label>First Name</label>
-					<input
-						type='text'
-						placeholder='first Name'
-						onChange={(event) => setFirstName(event.target.value)}
-					/>
+		<div className="new-contact ">
+			<div className="header">Random Contact Lists</div>
+			<form className="contact-form container " onSubmit={submitHandler}>
+				<div className="contact-lists ">
+					<div className="input-control">
+						<label> First Name </label>
+						<input
+							type="text" required
+							placeholder="First Name"
+							onChange={(e) => setFirstName(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Last Name</label>
+						<input
+							type="text" required
+							placeholder="Last Name"
+							onChange={(e) => setLastName(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Email </label>
+						<input
+							type="text" required
+							placeholder="Email"
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Phone Number </label>
+						<input
+							type="text" required
+							placeholder="Phone Number"
+							onChange={(e) => setphoneNumber(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> City </label>
+						<input
+							type="text" required
+							placeholder="City"
+							onChange={(e) => setCity(e.target.value)}
+						/>
+					</div>
 				</div>
-				<div className='input-control'>
-					<label>Last Name</label>
-					<input
-						type='text'
-						placeholder='Last Name'
-						onChange={(event) => setLastName(event.target.value)}
-					/>
+				<div className="imageUpload">
+					<h2>Add Image:</h2>
+					<input type="file" required onChange={handleChange} />
+					<img src={file} />
 				</div>
-
-				<div className='input-control'>
-					<label>Email</label>
-					<input
-						type='text'
-						placeholder='Email'
-						onChange={(event) => setEmail(event.target.value)}
-					/>
-				</div>
-
-				<div className='input-control'>
-					<label>Phone</label>
-					<input
-						type='text'
-						placeholder='Phone Number'
-						onChange={(event) => setNumber(event.target.value)}
-					/>
-				</div>
-
-				<div className='input-control'>
-					<label>City</label>
-					<input
-						type='text'
-						placeholder='City'
-						onChange={(event) => setCity(event.target.value)}
-					/>
-				</div>
-				{/* <div className='input-control'>
-					<label>City</label>
-					<input
-						type='text'
-						placeholder='school'
-						onChange={(event) => setCity(event.target.value)}
-					/>
-				</div> */}
-
-			
-
-
-				<div className='input-control'>
-					<input type='submit' value='Submit' />
+				<div className="Submit">
+					<input type="submit" value="Submit" />
 				</div>
 			</form>
 		</div>
 	);
 }
+export default AddNewContact
