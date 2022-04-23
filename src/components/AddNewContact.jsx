@@ -47,7 +47,7 @@ export default function AddNewContact({ onNewContact }) {
 				<div className='input-control'>
 					<label>Email</label>
 					<input
-						type='text'
+						type='email'
 						placeholder='Email'
 						onChange={(event) => setEmail(event.target.value)}
 					/>
@@ -56,7 +56,7 @@ export default function AddNewContact({ onNewContact }) {
 				<div className='input-control'>
 					<label>Phone</label>
 					<input
-						type='text'
+						type='number'
 						placeholder='Phone Number'
 						onChange={(event) => setNumber(event.target.value)}
 					/>
