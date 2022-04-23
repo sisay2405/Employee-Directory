@@ -1,6 +1,6 @@
 import useFetch from 'react-fetch-hook';
 import ContactCards from './Components/ContactCards';
-import { useEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 import AddNewContact from './Components/AddNewContact';
 import './styles/AddNewContact.css'
 import './styles/App.css'
@@ -39,6 +39,7 @@ const App = () => {
 		const contact = {
 			picture: {
 				large: 'https://randomuser.me/api/portraits/men/3.jpg',
+				large:'' 
 			},
 			name: {
 				last: newContact.lastName,
@@ -65,6 +66,7 @@ const App = () => {
 
 				{!newContactForm && (
 					<div style={{ textAlign: 'center' }}>
+							<div className='header'>Random Contact Lists</div>
 						<button type='button' onClick={() => setNewContactForm(true)}>
 							{' '}
 							Add New Contact
@@ -72,12 +74,22 @@ const App = () => {
 					</div>
 				)}
 					<form>
+					<div className='Filters'>
 					<input
 						type={'text'}
-						placeholder={'type here to filter...'}
+						placeholder={'Filter by Name'}
 						onChange={(event) => setFilterQuery(event.target.value)}
 						className={'ml-20 mt-6 rounded-md p-2'}
 					/>
+				
+					<input
+						type={'text'}
+						placeholder={'Filter by city'}
+						onChange={(event) => setFilterQuery(event.target.value)}
+						className={'ml-20 mt-6 rounded-md p-2'}
+					/>
+				
+					</div>
 				</form>
 			</section>
 			<section className={'grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20'}>
