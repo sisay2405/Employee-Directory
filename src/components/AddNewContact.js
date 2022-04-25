@@ -19,58 +19,58 @@ const AddNewContact =({ onNewContact }) => {
 		setFile(URL.createObjectURL(e.target.files[0]));
 	}
 	return (
-<div className="new-contact ">
-<div className="header">Contact Lists</div>
-<form className="contact-form container " onSubmit={submitHandler}>
-	<div className="contact-lists ">
-		<div className="input-control">
-			<label> First Name </label>
-			<input
-				type="text" required
-				placeholder="First Name"
-				onChange={(e) => setFirstName(e.target.value)}
-			/>
-		</div>
-		<div className="input-control">
-			<label> Last Name</label>
-			<input
-				type="text" required
-				placeholder="Last Name"
-				onChange={(e) => setLastName(e.target.value)}
-			/>
-		</div>
-		<div className="input-control">
-			<label> Email </label>
-			<input
-				type="email" required
-				placeholder="Email"
-				onChange={(e) => setEmail(e.target.value)}
-			/>
-		</div>
-		<div className="input-control">
-			<label> Phone Number </label>
-			<input
-				type="number" required
-				placeholder="Phone Number"
-				onChange={(e) => setphoneNumber(e.target.value)}
-			/>
-		</div>
-		<div className="input-control">
-			<label> City </label>
-			<input
-				type="text" required
-				placeholder="City"
-				onChange={(e) => setCity(e.target.value)}
-			/>
-		</div>
-	</div>
-	<div className="imageUpload">
-		<h2>Add Image:</h2>
-		<input type="file" required onChange={handleChange} />
-		<img src= {file} />
-	</div>
-	<div className="Submit">
-		<input type="submit" value="Submit" />
+		<div className="new-contact ">
+			<div className="header">Random Contact Lists</div>
+			<form className="contact-form container " onSubmit={submitHandler}>
+				<div className="contact-lists ">
+					<div className="input-control">
+						<label> First Name </label>
+						<input
+							type="text" required
+							placeholder="First Name"
+							onChange={(e) => setFirstName(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Last Name</label>
+						<input
+							type="text" required
+							placeholder="Last Name"
+							onChange={(e) => setLastName(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Email </label>
+						<input
+							type="email" required
+							placeholder="Email"
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> Phone Number </label>
+						<input
+							type="number" required
+							placeholder="Phone Number"
+							onChange={(e) => setphoneNumber(e.target.value)}
+						/>
+					</div>
+					<div className="input-control">
+						<label> City </label>
+						<input
+							type="text" required
+							placeholder="City"
+							onChange={(e) => setCity(e.target.value)}
+						/>
+					</div>
+				</div>
+				<div className="imageUpload">
+					<h2>Add Image:</h2>
+					<input type="file" required onChange={handleChange} />
+					<img src={file} />
+				</div>
+				<div className="Submit">
+					<input type="submit" value="Submit" />
 				</div>
 			</form>
 		</div>
