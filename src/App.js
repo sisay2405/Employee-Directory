@@ -1,10 +1,9 @@
+import {useEffect, useState } from 'react';
 import useFetch from 'react-fetch-hook';
 import ContactCards from './components/ContactCards';
-import { useEffect, useState } from 'react';
 import AddNewContact from './components/AddNewContact';
-import './styles/AddNewContact.css';
-import './styles/App.css';
-import './styles/index.css';
+// import { FaEyeSlash } from "react-icons/fa";
+// import { FaEye } from "react-icons/fa";
 
 const App = () => {
 	const url = 'https://randomuser.me/api/';
@@ -12,7 +11,7 @@ const App = () => {
 	const [contactList, setContactList] = useState();
 	const [filterQuery, setFilterQuery] = useState();
 	const [newContactForm, setNewContactForm] = useState(true);
-
+	// const [show, setShow] = useState(false)
 	useEffect(() => {
 		if (!filterQuery) {
 			setContactList(data?.results?.slice(0, 10));
@@ -20,7 +19,6 @@ const App = () => {
 			const queryString = filterQuery.toLowerCase();
 			const filteredData = data?.results?.filter((contact) => {
 				const fullName = `${contact.name.first} ${contact.name.last}`;
-
 				// if it's just one letter, return all names that start with it
 				if (queryString.length === 1) {
 					const firstLetter = fullName.charAt(0).toLowerCase();
@@ -60,17 +58,24 @@ const App = () => {
 	return (
 		<div className={'bg-gray-100'}>
 			<section>
-				{newContactForm && <AddNewContact onNewContact={newContactHandler} />}
+			
+
+				{ <AddNewContact onNewContact={newContactHandler} />}
 
 				{!newContactForm && (
 					<div style={{ textAlign: 'center' }}>
-							<div className='header'>Random Contact Lists</div>
-						<button type='button' onClick={() => setNewContactForm(true)}>
+							{/* <div className='header'>Random Contact Lists</div> */}
+											{/* <button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button> */}
+
+						{/* <button className='addNewcontact' type='button' onClick={() => setNewContactForm(true)}>
 							{' '}
 							Add New Contact
-						</button>
+						</button> */}
 					</div>
 				)}
+				<div>
+				{/* <div className="header">Random Contact Lists</div> */}
+				</div>
 					<form>
 					<div className='Filters'>
 					<input
