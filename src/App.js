@@ -1,7 +1,7 @@
 import {useEffect, useState } from 'react';
 import useFetch from 'react-fetch-hook';
-import ContactCards from './Components/ContactCards';
-import AddNewContact from './Components/AddNewContact';
+import ContactCards from './components/ContactCards';
+import AddNewContact from './components/AddNewContact';
 // import { FaEyeSlash } from "react-icons/fa";
 // import { FaEye } from "react-icons/fa";
 
