@@ -32,7 +32,7 @@ const App = () => {
 	}, [data, filterQuery]);
 
 	const newContactHandler = (newContact) => {
-		 console.log(newContact);
+		console.log(newContact);
 
 		const contact = {
 			picture: {
@@ -64,13 +64,13 @@ const App = () => {
 
 				{!newContactForm && (
 					<div style={{ textAlign: 'center' }}>
-							<div className='header'>Random Contact Lists</div>
+							{/* <div className='header'>Random Contact Lists</div> */}
 											{/* <button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button> */}
 
-						<button className='addNewcontact' type='button' onClick={() => setNewContactForm(true)}>
+						{/* <button className='addNewcontact' type='button' onClick={() => setNewContactForm(true)}>
 							{' '}
 							Add New Contact
-						</button>
+						</button> */}
 					</div>
 				)}
 				<div>
