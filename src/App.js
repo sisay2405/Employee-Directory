@@ -1,10 +1,10 @@
 import useFetch from 'react-fetch-hook';
-import ContactCards from './Components/ContactCards';
-import {useEffect, useState } from 'react';
-import AddNewContact from './Components/AddNewContact';
-import './styles/AddNewContact.css'
-import './styles/App.css'
-import './styles/index.css'
+import ContactCards from './components/ContactCards';
+import { useEffect, useState } from 'react';
+import AddNewContact from './components/AddNewContact';
+import './styles/AddNewContact.css';
+import './styles/App.css';
+import './styles/index.css';
 
 const App = () => {
 	const url = 'https://randomuser.me/api/';
@@ -34,7 +34,7 @@ const App = () => {
 	}, [data, filterQuery]);
 
 	const newContactHandler = (newContact) => {
-		 console.log(newContact);
+		console.log(newContact);
 
 		const contact = {
 			picture: {
@@ -60,8 +60,6 @@ const App = () => {
 	return (
 		<div className={'bg-gray-100'}>
 			<section>
-			
-
 				{newContactForm && <AddNewContact onNewContact={newContactHandler} />}
 
 				{!newContactForm && (

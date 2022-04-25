@@ -42,7 +42,7 @@ const AddNewContact =({ onNewContact }) => {
 					<div className="input-control">
 						<label> Email </label>
 						<input
-							type="text" required
+							type="email" required
 							placeholder="Email"
 							onChange={(e) => setEmail(e.target.value)}
 						/>
@@ -50,7 +50,7 @@ const AddNewContact =({ onNewContact }) => {
 					<div className="input-control">
 						<label> Phone Number </label>
 						<input
-							type="text" required
+							type="number" required
 							placeholder="Phone Number"
 							onChange={(e) => setphoneNumber(e.target.value)}
 						/>
