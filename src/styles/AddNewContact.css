@@ -1,7 +1,7 @@
-
 body{
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
 }
 .new-contact {
   margin: 0;
@@ -15,32 +15,46 @@ body{
   margin-top: 0;
   padding: 0;
 }
-
 .contact-lists {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   border-radius: 4px;
   padding: 0;
 }
-.contact-form{
-	color: #4e0f0f;
-	background-color: #9caa88;
+.contact-form {
+  color: #4e0f0f;
+  background-color: #9caa88;
 }
-.imageUpload{
-	text-align: center;
+.imageUpload {
+  text-align: center;
 }
-.Submit{
-    text-align: center;
-	background-color: #3c8159;
-	color: white;
-	padding: 10px 10px;
-	margin: 8px 0;
-	cursor: pointer;
+button:disabled {
+  background: #be230f;
+  padding: 8px 8px;
+  margin: 8px 0; 
+  color: aliceblue;
+ border-radius: 4px;
+  margin-left: 500px;
+  width: 15em
+}
+button:enabled {
+  margin-left: 400px;
+  background: #48d62f;
+  /* padding: 10px 10px; */
+  margin: 8px 0; 
+  border-radius: 10px;
+  margin-left: 500px;
+  width: 19em
+}
+.addNewcontact{
+  text-align: center;
+  margin-left: 300px;
 }
 .input-control label {
   display: block;
 }
 .input-control input {
-  padding: 10px; 
-   border-radius: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: #be230f;
 }
