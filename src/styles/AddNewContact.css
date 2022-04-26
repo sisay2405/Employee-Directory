@@ -23,26 +23,26 @@ body{
 }
 .contact-form {
   color: #4e0f0f;
-  background-color: #9caa88;
+  background-color: rgb(178, 212, 136);
 }
 .imageUpload {
   text-align: center;
 }
 button:disabled {
-  background: #be230f;
+  background: #9ab673;
   padding: 8px 8px;
   margin: 8px 0; 
   color: aliceblue;
  border-radius: 4px;
   margin-left: 500px;
-  width: 15em
+  width: 19em
 }
 button:enabled {
   margin-left: 400px;
-  background: #48d62f;
-  /* padding: 10px 10px; */
+  background: #6aad0d;
+  padding-top: 10PX;
   margin: 8px 0; 
-  border-radius: 10px;
+  border-radius: 4px;
   margin-left: 500px;
   width: 19em
 }
@@ -52,9 +52,16 @@ button:enabled {
 }
 .input-control label {
   display: block;
+  border: 10px #be230f;
 }
 .input-control input {
   padding: 10px;
   border-radius: 5px;
-  border: #be230f;
+  border: 10px #be230f;
+}
+.error { border: 1px solid red; }
+.input:focus {
+  outline: none !important;
+  border:1px solid red;
+  box-shadow: 0 0 10px #719ECE;
 }

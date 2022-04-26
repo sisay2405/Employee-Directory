@@ -29,15 +29,16 @@ const AddNewContact = ({ onNewContact }) => {
 				<FaReact  color= "green" size = '2rem'/> <p> Sisay and Wosen</p>
 			</div> */}
 			<div>
-				<div className="header">Random Contact Lists</div>
+				<div className="header">Contact Lists</div>
 				<button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button>
 				{show && <div className="new-contact ">
 					{/* <div className="header">Random Contact Lists</div> */}
 					<form className="contact-form  " onSubmit={submitHandler}>
 						<div className="contact-lists ">
-							<div className="input-control">
+							<div className="input-control ">
 								<label> First Name </label>
-								<input
+								<input 
+							
 									type="text" 
 									placeholder="First Name"
 									onChange={(e) => setFirstName(e.target.value)}

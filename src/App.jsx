@@ -1,4 +1,4 @@
-import {useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useFetch from 'react-fetch-hook';
 import ContactCards from './components/ContactCards';
 import AddNewContact from './components/AddNewContact';
@@ -37,7 +37,7 @@ const App = () => {
 		const contact = {
 			picture: {
 				large: 'https://randomuser.me/api/portraits/men/3.jpg',
-				large:'' 
+				large: ''
 			},
 			name: {
 				last: newContact.lastName,
@@ -56,16 +56,16 @@ const App = () => {
 		setNewContactForm(false);
 	};
 	return (
-		<div className={'bg-gray-100'}>
+		<div className={'bg-green-100'}>
 			<section>
-			
 
-				{ <AddNewContact onNewContact={newContactHandler} />}
+
+				{<AddNewContact onNewContact={newContactHandler} />}
 
 				{!newContactForm && (
 					<div style={{ textAlign: 'center' }}>
-							{/* <div className='header'>Random Contact Lists</div> */}
-											{/* <button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button> */}
+						{/* <div className='header'>Random Contact Lists</div> */}
+						{/* <button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button> */}
 
 						{/* <button className='addNewcontact' type='button' onClick={() => setNewContactForm(true)}>
 							{' '}
@@ -74,24 +74,24 @@ const App = () => {
 					</div>
 				)}
 				<div>
-				{/* <div className="header">Random Contact Lists</div> */}
+					{/* <div className="header">Random Contact Lists</div> */}
 				</div>
-					<form>
+				<form>
 					<div className='Filters'>
-					<input
-						type={'text'}
-						placeholder={'Filter by Name'}
-						onChange={(event) => setFilterQuery(event.target.value)}
-						className={'ml-20 mt-6 rounded-md p-2'}
-					/>
-				
-					<input
-						type={'text'}
-						placeholder={'Filter by city'}
-						onChange={(event) => setFilterQuery(event.target.value)}
-						className={'ml-20 mt-6 rounded-md p-2'}
-					/>
-				
+						<input
+							type={'text'}
+							placeholder={'Filter by Name'}
+							onChange={(event) => setFilterQuery(event.target.value)}
+							className={'ml-20 mt-6 rounded-md p-2'}
+						/>
+
+						<input
+							type={'text'}
+							placeholder={'Filter by city'}
+							onChange={(event) => setFilterQuery(event.target.value)}
+							className={'ml-20 mt-6 rounded-md p-2'}
+						/>
+
 					</div>
 				</form>
 			</section>
