@@ -34,8 +34,8 @@ button:disabled {
   margin: 8px 0; 
   color: aliceblue;
  border-radius: 4px;
-  margin-left: 500px;
-  width: 15em
+  /* margin-left: 500px; */
+   width: 15em 
 }
 button:enabled {
   margin-left: 400px;
@@ -43,8 +43,9 @@ button:enabled {
   /* padding: 10px 10px; */
   margin: 8px 0; 
   border-radius: 10px;
-  margin-left: 500px;
-  width: 19em
+  /* margin-left: 500px; */
+  width: 19em;
+  text-align: center;
 }
 .addNewcontact{
   text-align: center;
@@ -58,3 +59,25 @@ button:enabled {
   border-radius: 5px;
   border: #be230f;
 }
+
+ @media (min-width: 640px) { 
+  button:disabled {
+
+    margin-left: 200px;
+  }
+}
+
+ @media (min-width: 1024px) { 
+  button:disabled {
+    margin-left: 300px;
+  }
+  }
+
+     
+ @media (min-width: 1280px) { 
+  button:disabled {
+
+    margin-left: 500px;
+  }
+
+   }
