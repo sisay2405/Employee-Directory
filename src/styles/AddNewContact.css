@@ -34,17 +34,21 @@ button:disabled {
   margin: 8px 0; 
   color: aliceblue;
  border-radius: 4px;
-  margin-left: 500px;
-  width: 19em
+  margin-left:40px;
+  width: 11em;
 }
 button:enabled {
-  margin-left: 400px;
   background: #6aad0d;
   padding-top: 10PX;
   margin: 8px 0; 
   border-radius: 4px;
-  margin-left: 500px;
-  width: 19em
+ display: flex;
+ left: 50%;
+  margin-left: 50px;
+  width: 11em
+}
+.addbtn{
+  text-align: center;
 }
 .addNewcontact{
   text-align: center;
@@ -58,10 +62,44 @@ button:enabled {
   padding: 10px;
   border-radius: 5px;
   border: 10px #be230f;
+
 }
-.error { border: 1px solid red; }
-.input:focus {
+.firstContact{
+  display: flex;
+  justify-content: space-between;
+}
+.input-control input:focus {
   outline: none !important;
-  border:1px solid red;
+  border:3px solid red;
   box-shadow: 0 0 10px #719ECE;
+}
+/* media query  */
+@media screen and (min-width: 480px) {
+  button:disabled{
+    margin-left: 300px;
+}
+button:enabled{
+  margin-left: 300px;
+}
+
+}
+@media screen and (min-width: 768px) {
+  button:disabled{
+    margin-left: 400px;
+  }
+  button:enabled{
+    margin-left: 400px;
+  }
+ 
+
+}
+@media screen and (min-width: 1024px) {
+  button:disabled{
+    margin-left: 550px;
+}
+button:enabled{
+  margin-left: 570px;
+}
+ 
+
 }

@@ -1,11 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
 import useFetch from "react-fetch-hook";
 import ContactCards from "./components/ContactCards";
 import AddNewContact from "./components/AddNewContact";
-// import { FaEyeSlash } from "react-icons/fa";
-// import { FaEye } from "react-icons/fa";
 
 const App = () => {
   const url = "https://randomuser.me/api/";
@@ -13,7 +10,6 @@ const App = () => {
   const [contactList, setContactList] = useState();
   const [filterQuery, setFilterQuery] = useState();
   const [newContactForm, setNewContactForm] = useState(true);
-  // const [show, setShow] = useState(false)
 
   useEffect(() => {
     if (!filterQuery) {
@@ -59,34 +55,21 @@ const App = () => {
     return setNewContactForm(false);
   };
   return (
-    <div className={"bg-gray-100"}>
+    <div className={"bg-green-100"}>
       <section>
         {<AddNewContact onNewContact={newContactHandler} />}
 
         {!newContactForm && (
           <div style={{ textAlign: "center" }}>
-            {/* <div className='header'>Random Contact Lists</div> */}
-            {/* <button type="button" onClick={() => setShow(!show)}>  {show === true ? <FaEyeSlash size = '2rem'/> : <FaEye size = '2rem'/> } Add New Contact</button> */}
-
-            {/* <button className='addNewcontact' type='button' onClick={() => setNewContactForm(true)}>
-							{' '}
-							Add New Contact
-						</button> */}
           </div>
         )}
-        <div>{/* <div className="header">Random Contact Lists</div> */}</div>
+        <div>
+        </div>
         <form>
           <div className="Filters">
             <input
               type={"text"}
               placeholder={"Filter by Name"}
-              onChange={(event) => setFilterQuery(event.target.value)}
-              className={"ml-20 mt-6 rounded-md p-2"}
-            />
-
-            <input
-              type={"text"}
-              placeholder={"Filter by city"}
               onChange={(event) => setFilterQuery(event.target.value)}
               className={"ml-20 mt-6 rounded-md p-2"}
             />
