@@ -9,17 +9,15 @@ const App = () => {
   const { data } = useFetch(url + "?results=100");
   const [contactList, setContactList] = useState();
   const [filterQuery, setFilterQuery] = useState();
-  const [cityFilterQ,setCityFilterQ] = useState();
+  const [cityFilterQ, setCityFilterQ] = useState();
   const [newContactForm, setNewContactForm] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-
 
   useEffect(() => {
     if (!filterQuery) {
       setContactList(data?.results?.slice(0, 10));
     } else {
-		console.log('name')
-		setCityFilterQ('')
+      console.log('name')
+      setCityFilterQ('')
       const queryString = filterQuery.toLowerCase();
       const filteredData = data?.results?.filter((contact) => {
         const fullName = `${contact.name.first} ${contact.name.last}`;
@@ -31,41 +29,34 @@ const App = () => {
           return fullName.toLowerCase().includes(queryString);
         }
       });
-	  console.log(filteredData)
+      console.log(filteredData)
       setContactList(filteredData);
     }
-
-
   }, [data, filterQuery]);
 
-  useEffect(()=>{
-	if(!cityFilterQ){
-		console.log('there')
-
-		setContactList(data?.results?.slice(0, 10));
-	}else{
-
-		console.log('filter')
-
-		const queryString = cityFilterQ.toLowerCase();
-		const filteredData = data?.results?.filter((contact) => {
-		  const city = contact.location.city;
-		  // if it's just one letter, return all names that start with it
-		  if (queryString.length === 1) {
-			const firstLetter = city.charAt(0).toLowerCase();
-			return firstLetter === queryString;
-		  } else {
-			return city.toLowerCase().includes(queryString);
-		  }
-		});
-		
-		setContactList(filteredData);
-	}
-  },[data,cityFilterQ])
+  useEffect(() => {
+    if (!cityFilterQ) {
+      console.log('there')
+      setContactList(data?.results?.slice(0, 10));
+    } else {
+      console.log('filter')
+      const queryString = cityFilterQ.toLowerCase();
+      const filteredData = data?.results?.filter((contact) => {
+        const city = contact.location.city;
+        // if it's just one letter, return all names that start with it
+        if (queryString.length === 1) {
+          const firstLetter = city.charAt(0).toLowerCase();
+          return firstLetter === queryString;
+        } else {
+          return city.toLowerCase().includes(queryString);
+        }
+      });
+      setContactList(filteredData);
+    }
+  }, [data, cityFilterQ])
 
   const newContactHandler = (newContact) => {
     console.log(newContact);
-
     const contact = {
       picture: {
         large: newContact?.file,
@@ -80,11 +71,9 @@ const App = () => {
         city: newContact.city,
       },
     };
-
     setContactList((prev) => {
       return [contact, ...prev];
     });
-
     return setNewContactForm(false);
   };
   return (
@@ -97,7 +86,7 @@ const App = () => {
           </div>
         )}
         <div>
-          </div>
+        </div>
         <form>
           <div className="Filters">
             <input
@@ -106,8 +95,7 @@ const App = () => {
               onChange={(event) => setFilterQuery(event.target.value)}
               className={"ml-20 mt-6 rounded-md p-2"}
             />
-
-			<input
+            <input
               type={"text"}
               placeholder={"Filter by City"}
               onChange={(event) => setCityFilterQ(event.target.value)}
@@ -118,15 +106,9 @@ const App = () => {
       </section>
       <section className={"grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20"}>
         {contactList?.length < 1 && (<h1>No data matches your search</h1>)}
-        {/* {isLoading && (
- <div className="loading">
- <i className="fa fa-spin fa-cat fa-3x" aria-hidden="true" />
-</div>
-        )} */}
         <ContactCards contactList={contactList} />
       </section>
     </div>
   );
 };
-
 export default App;

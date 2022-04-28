@@ -27,7 +27,6 @@ const AddNewContact = ({ onNewContact }) => {
     setShowForm(!showForm);
   };
   const handleChange = (e) => {
-    // console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   };
 
