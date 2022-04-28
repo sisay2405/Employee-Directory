@@ -6,10 +6,12 @@ import AddNewContact from "./components/AddNewContact";
 
 const App = () => {
   const url = "https://randomuser.me/api/";
-  const { data } = useFetch(url + "?results=200");
+  const { data } = useFetch(url + "?results=100");
   const [contactList, setContactList] = useState();
   const [filterQuery, setFilterQuery] = useState();
   const [newContactForm, setNewContactForm] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     if (!filterQuery) {
@@ -64,7 +66,7 @@ const App = () => {
           </div>
         )}
         <div>
-        </div>
+          </div>
         <form>
           <div className="Filters">
             <input
@@ -77,7 +79,12 @@ const App = () => {
         </form>
       </section>
       <section className={"grid sm:grid-cols-2 md:grid-cols-4 gap-6 p-20"}>
-        {contactList?.length < 1 && <h1>No data matches your search</h1>}
+        {contactList?.length < 1 && (<h1>No data matches your search</h1>)}
+        {/* {isLoading && (
+ <div className="loading">
+ <i className="fa fa-spin fa-cat fa-3x" aria-hidden="true" />
+</div>
+        )} */}
         <ContactCards contactList={contactList} />
       </section>
     </div>
