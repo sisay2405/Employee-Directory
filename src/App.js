@@ -9,6 +9,7 @@ const App = () => {
   const { data } = useFetch(url + "?results=100");
   const [contactList, setContactList] = useState();
   const [filterQuery, setFilterQuery] = useState();
+  const [cityFilterQ,setCityFilterQ] = useState();
   const [newContactForm, setNewContactForm] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -17,6 +18,8 @@ const App = () => {
     if (!filterQuery) {
       setContactList(data?.results?.slice(0, 10));
     } else {
+		console.log('name')
+		setCityFilterQ('')
       const queryString = filterQuery.toLowerCase();
       const filteredData = data?.results?.filter((contact) => {
         const fullName = `${contact.name.first} ${contact.name.last}`;
@@ -28,9 +31,37 @@ const App = () => {
           return fullName.toLowerCase().includes(queryString);
         }
       });
+	  console.log(filteredData)
       setContactList(filteredData);
     }
+
+
   }, [data, filterQuery]);
+
+  useEffect(()=>{
+	if(!cityFilterQ){
+		console.log('there')
+
+		setContactList(data?.results?.slice(0, 10));
+	}else{
+
+		console.log('filter')
+
+		const queryString = cityFilterQ.toLowerCase();
+		const filteredData = data?.results?.filter((contact) => {
+		  const city = contact.location.city;
+		  // if it's just one letter, return all names that start with it
+		  if (queryString.length === 1) {
+			const firstLetter = city.charAt(0).toLowerCase();
+			return firstLetter === queryString;
+		  } else {
+			return city.toLowerCase().includes(queryString);
+		  }
+		});
+		
+		setContactList(filteredData);
+	}
+  },[data,cityFilterQ])
 
   const newContactHandler = (newContact) => {
     console.log(newContact);
@@ -73,6 +104,13 @@ const App = () => {
               type={"text"}
               placeholder={"Filter by Name"}
               onChange={(event) => setFilterQuery(event.target.value)}
+              className={"ml-20 mt-6 rounded-md p-2"}
+            />
+
+			<input
+              type={"text"}
+              placeholder={"Filter by City"}
+              onChange={(event) => setCityFilterQ(event.target.value)}
               className={"ml-20 mt-6 rounded-md p-2"}
             />
           </div>
