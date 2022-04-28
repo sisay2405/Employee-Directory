@@ -1,29 +1,19 @@
-body{
+body {
   padding: 0;
   margin: 0;
-  /* overflow: hidden; */
-}
-.new-contact {
-  margin: 0;
-  padding: 0;
 }
 .header {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
   text-align: center;
   color: #7aab31;
-  margin-top: 0;
-  padding: 0;
-}
-.contact-lists {
-  display: flex;
-  justify-content: space-around;
-  border-radius: 4px;
-  padding: 0;
+  margin-top: 5px;
+  padding: 3px;
 }
 .contact-form {
   color: #4e0f0f;
   background-color: rgb(178, 212, 136);
+  padding: 10px;
 }
 .imageUpload {
   text-align: center;
@@ -31,75 +21,65 @@ body{
 button:disabled {
   background: #9ab673;
   padding: 8px 8px;
-  margin: 8px 0; 
+  margin: 8px 0;
   color: aliceblue;
- border-radius: 4px;
-  margin-left:40px;
+  border-radius: 4px;
+  margin-left: 40px;
   width: 11em;
 }
 button:enabled {
   background: #6aad0d;
-  padding-top: 10PX;
-  margin: 8px 0; 
+  padding-top: 10px;
+  margin: 8px 0;
   border-radius: 4px;
- display: flex;
- left: 50%;
+  display: flex;
+  left: 50%;
   margin-left: 50px;
-  width: 11em
+  width: 11em;
 }
-.addbtn{
-  text-align: center;
-}
-.addNewcontact{
+.addNewcontact {
   text-align: center;
   margin-left: 300px;
 }
 .input-control label {
   display: block;
-  border: 10px #be230f;
 }
 .input-control input {
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
-  border: 10px #be230f;
-
-}
-.firstContact{
-  display: flex;
-  justify-content: space-between;
 }
 .input-control input:focus {
   outline: none !important;
-  border:3px solid red;
-  box-shadow: 0 0 10px #719ECE;
+  border: 3px solid red;
 }
 /* media query  */
 @media screen and (min-width: 480px) {
-  button:disabled{
+  button:disabled {
     margin-left: 300px;
-}
-button:enabled{
-  margin-left: 300px;
-}
-
+  }
+  button:enabled {
+    margin-left: 300px;
+  }
 }
 @media screen and (min-width: 768px) {
-  button:disabled{
+  button:disabled {
     margin-left: 400px;
   }
-  button:enabled{
+  button:enabled {
     margin-left: 400px;
   }
- 
-
 }
 @media screen and (min-width: 1024px) {
-  button:disabled{
+  button:disabled {
     margin-left: 550px;
+  }
+  button:enabled {
+    margin-left: 570px;
+  }
 }
 button:enabled{
   margin-left: 570px;
 }
  
 
-}
+
